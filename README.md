@@ -21,7 +21,7 @@ Exgauss is a MATLAB toolbox for fitting the ex-Gaussian distribution to data (e.
 Get the code as follows:
 
 ```
-git clone ssh://
+git clone ssh://git@github.com:bramzandbelt/exgauss.git
 ```
 
 ### Usage
