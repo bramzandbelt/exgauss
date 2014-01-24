@@ -25,7 +25,7 @@ function exgauss_plot(y,X)
 % 1.1.1. Get rid of zeros and NaN in data, ensure a column vector
 % ------------------------------------------------------------------------- 
 y           = nonzeros(nonnans(y(:)));
-x           = colon(min(y),0.1,max(y))';
+x           = colon(min(y),1,max(y))';
 
 % 1.1.2. Compute number of bins, frequency, and bin centers
 % ------------------------------------------------------------------------- 
