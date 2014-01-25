@@ -44,7 +44,7 @@ costFun                   = @exgauss_neg_lnl; % Negative log-likelihood
 
 % 1.1.1. Get rid of zeros and NaN in data and ensure a column vector
 % ------------------------------------------------------------------------- 
-y                         = nonzeros(nonnans(y(:)));
+y                         = sort(nonzeros(nonnans(y(:))));
 
 % 1.1.2. Starting values and bounds
 % ------------------------------------------------------------------------- 
