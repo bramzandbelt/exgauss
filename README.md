@@ -21,31 +21,54 @@ Exgauss is a MATLAB toolbox for fitting the ex-Gaussian distribution to data (e.
 Get the code as follows:
 
 ```
-git clone ssh://git@github.com:bramzandbelt/exgauss.git
+git clone https://github.com/bramzandbelt/exgauss.git
 ```
 
 ### Usage
 
-Fit the ex-Gaussian model to the data:
+Obtain best-fitting ex-Gaussian parameters (X), by fitting the ex-Gaussian model to the observed data (y) using a bounded Simplex algorithm:
 
 ```
 [X,fVal,exitFlag,solverOutput] = exgauss_fit(y);
 ```
 
-Plot a histogram of the data and a line plot of the best-fitting ex-Gaussian model:
-
+Plot a histogram of the observed data (y) and and a line plot of the ex-Gaussian probability density function (PDF), using the best-fitting parameters:
 
 ```
 figure;hold on
-exgauss_plot(y,X);
+exgauss_plot('pdf',y,X);
 ```
+
+Plot quantiles (.1, .3, .5, .7, .9) of the observed data (y) and and a line plot of the ex-Gaussian cumulative distribution function (CDF), using the best-fitting parameters:
+
+```
+figure;hold on
+exgauss_plot('cdf',y,X);
+```
+
+Plot both the histogram/PDF and quantiles/CDF in one figure:
+
+```
+figure;hold on
+exgauss_plot('both',y,X);
+```
+
+Print the figure as 'fileName.png' in the present working directory:
+
+```
+figure;hold on
+exgauss_plot('both',y,X,'fileName');
+```
+
 
 ## Colophon
 
 
 ### Version
 
-Version 1.0 - January 2014
+Version 1.1 - February 2014
+
+Changes in version 1.1 - Corrected a bug in plotting the PDF,  added functionality for plotting CDFs, and added exporting figure as *.png file.
 
 ### Contact
 
