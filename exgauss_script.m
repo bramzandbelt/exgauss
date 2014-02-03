@@ -20,17 +20,19 @@
 %                 * 'pdf', probability density function (PDF)
 %                 * 'cdf', cumulative distribution function (CDF)
 %                 * 'both', PDF and CDF
-% fileTag       - char array, tag for the filename of the figure. Figure is
-%               saved as a .png-file in presented working directory.
+% fileName      - char array, Filename of the figure (without path). Figure
+%                 is saved as a .png-file in presented working directory.
 
 plotType  = 'both';
-fileTag   = sprintf('subject_%.4d',1);
+fileName  = sprintf('subject_%.4d',1);
 
 % Fit the ex-Gaussian model to the RT data through log-likelihood
 % maximization using a constrained Simplex algorithm
 [X,fVal,exitFlag,solverOutput] = exgauss_fit(y);
 
 % Plot a histogram of the observations with on top the normalized
-% ex-Gaussian distribution
+% ex-Gaussian probability density function (left panel) and the quantiles
+% (.1, .3, .5, .7, .9 with on top the ex-Gaussian cumulative distribution 
+% function (right panel).
 figure;hold on
-exgauss_plot(plotType,y,X,fileTag);
+exgauss_plot(plotType,y,X,fileName);

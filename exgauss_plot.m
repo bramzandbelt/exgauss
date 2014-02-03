@@ -1,4 +1,4 @@
-function exgauss_plot(plotType,y,X,fileTag)
+function exgauss_plot(plotType,y,X,varargin)
 % EXGAUSS_PLOT plots a histogram of the data and a line plot of the mode
 %  
 % DESCRIPTION 
@@ -6,15 +6,17 @@ function exgauss_plot(plotType,y,X,fileTag)
 % distribution with best-fitting parameters
 %  
 % SYNTAX 
-% EXGAUSS_PLOT(y,X); 
+% EXGAUSS_PLOT(plotType,y,X); 
 % plotType      - char array, indicating how to plot the data:
 %                 * 'pdf', probability density function (PDF)
 %                 * 'cdf', cumulative distribution function (CDF)
 %                 * 'both', PDF and CDF
 % y             - Nx1 vector of observed response times
 % X             - 1x3 best-fitting parameter values (mu,sigma,tau)
-% fileTag       - char array, tag for the filename of the figure. Figure is
-%               saved in presented working directory.
+%
+% EXGAUSS_PLOT(plotType,y,X,fileName); 
+% fileName      - char array, tag for the filename of figure (optional). 
+%                 Figure is saved in presented working directory.
 %  
 % ......................................................................... 
 % Bram Zandbelt, bramzandbelt@gmail.com 
@@ -83,7 +85,9 @@ end
 % 3. WRITE FIGURE TO PNG FILE
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 
-print('-dpng',fullfile(pwd,[tag,'.png']));
+if ~isempty(varargin)
+  print('-dpng',fullfile(pwd,[varargin{1},'.png']));
+end
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 % 4. NESTED FUNCTIONS
