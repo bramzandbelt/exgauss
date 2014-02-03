@@ -16,6 +16,15 @@
 %                 * number of iterations,
 %                 * number of function evaluations
 %                 * algorithm
+% plotType      - char array, indicating how to plot the data:
+%                 * 'pdf', probability density function (PDF)
+%                 * 'cdf', cumulative distribution function (CDF)
+%                 * 'both', PDF and CDF
+% fileTag       - char array, tag for the filename of the figure. Figure is
+%               saved as a .png-file in presented working directory.
+
+plotType  = 'both';
+fileTag   = sprintf('subject_%.4d',1);
 
 % Fit the ex-Gaussian model to the RT data through log-likelihood
 % maximization using a constrained Simplex algorithm
@@ -24,4 +33,4 @@
 % Plot a histogram of the observations with on top the normalized
 % ex-Gaussian distribution
 figure;hold on
-exgauss_plot(y,X);
+exgauss_plot(plotType,y,X,fileTag);
