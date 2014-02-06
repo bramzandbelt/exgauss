@@ -24,6 +24,8 @@ Get the code as follows:
 git clone https://github.com/bramzandbelt/exgauss.git
 ```
 
+You can also download the code as a ZIP file on the right.
+
 ### Usage
 
 Obtain best-fitting ex-Gaussian parameters (X), by fitting the ex-Gaussian model to the observed data (y) using a bounded Simplex algorithm:
