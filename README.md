@@ -68,8 +68,9 @@ exgauss_plot('both',y,X,'fileName');
 
 ### Version
 
-Version 1.1 - February 2014
+Version 1.2 - March 2014
 
+Changes in version 1.2 - Corrected a bug in code for computing the normalized ex-Gaussian probability density function.
 Changes in version 1.1 - Corrected a bug in plotting the PDF,  added functionality for plotting CDFs, and added exporting figure as *.png file.
 
 ### Contact
