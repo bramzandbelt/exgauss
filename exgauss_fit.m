@@ -2,7 +2,7 @@ function [X,fVal,exitFlag,solverOutput] = exgauss_fit(y)
 % EXGAUSS_FIT fits the ex-Gaussian distribution to a vector of data
 %  
 % DESCRIPTION 
-% Optimized fits between the data (t) and the ex-Gaussian distribution,
+% Optimized fits between the data (y) and the ex-Gaussian distribution,
 % using maximum likelihood estimation and a bounded Simplex algorithm.
 %  
 % SYNTAX 
