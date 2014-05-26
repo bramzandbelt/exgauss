@@ -3,7 +3,7 @@
 
 ## Overview
 
-Exgauss is a MATLAB toolbox for fitting the ex-Gaussian distribution to data (e.g. response times).
+Exgauss is a MATLAB toolbox for fitting the ex-Gaussian distribution to data (e.g. response times) using maximum likelihood estimation.
 
 ## Getting started
 
@@ -28,7 +28,7 @@ You can also download the code as a ZIP file on the right.
 
 ### Usage
 
-Obtain best-fitting ex-Gaussian parameters (X), by fitting the ex-Gaussian model to the observed data (y) using a bounded Simplex algorithm:
+Obtain best-fitting ex-Gaussian parameters (X) by fitting the ex-Gaussian model to the observed data (y) using a bounded Simplex algorithm and maximum likelihood estimation:
 
 ```
 [X,fVal,exitFlag,solverOutput] = exgauss_fit(y);
@@ -62,6 +62,10 @@ figure;hold on
 exgauss_plot('both',y,X,'fileName');
 ```
 
+### Citation
+If you intend to publish results obtained with this code, you can cite it as follows:
+Zandbelt, Bram (2014): exgauss. figshare.
+http://dx.doi.org/10.6084/m9.figshare.971318
 
 ## Colophon
 
