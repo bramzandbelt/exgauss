@@ -34,6 +34,12 @@ Obtain best-fitting ex-Gaussian parameters (X), by fitting the ex-Gaussian model
 [X,fVal,exitFlag,solverOutput] = exgauss_fit(y);
 ```
 
+Compute Pearson's &chi;<sup>2</sup> goodness-of-fit statistic:
+
+```
+chiSquare = exgauss_chi_square(y,X);
+```
+
 Plot a histogram of the observed data (y) and and a line plot of the ex-Gaussian probability density function (PDF), using the best-fitting parameters:
 
 ```
@@ -41,7 +47,7 @@ figure;hold on
 exgauss_plot('pdf',y,X);
 ```
 
-Plot quantiles (.1, .3, .5, .7, .9) of the observed data (y) and and a line plot of the ex-Gaussian cumulative distribution function (CDF), using the best-fitting parameters:
+Plot quantiles (.1, .3, .5, .7, .9, hard-coded in `exgauss_plot`) of the observed data (y) and and a line plot of the ex-Gaussian cumulative distribution function (CDF), using the best-fitting parameters:
 
 ```
 figure;hold on
@@ -68,9 +74,10 @@ exgauss_plot('both',y,X,'fileName');
 
 ### Version
 
-Version 1.2 - March 2014
+Version 1.3 - June 2014
 
-Changes in version 1.2 - Corrected a bug in code for computing the normalized ex-Gaussian probability density function.
+Changes in version 1.3 - Added computation of Pearson's &chi;<sup>2</sup> goodness-of-fit statistic.  
+Changes in version 1.2 - Corrected a bug in code for computing the normalized ex-Gaussian probability density function.  
 Changes in version 1.1 - Corrected a bug in plotting the PDF,  added functionality for plotting CDFs, and added exporting figure as *.png file.
 
 ### Contact
