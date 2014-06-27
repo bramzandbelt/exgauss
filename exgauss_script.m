@@ -30,6 +30,9 @@ fileName  = sprintf('subject_%.4d',1);
 % maximization using a constrained Simplex algorithm
 [X,fVal,exitFlag,solverOutput] = exgauss_fit(y);
 
+% Compute the goodness of fit using Pearson's chi-squared statistic
+chiSquare = exgauss_chi_square(y,X);
+
 % Plot a histogram of the observations with on top the normalized
 % ex-Gaussian probability density function (left panel) and the quantiles
 % (.1, .3, .5, .7, .9 with on top the ex-Gaussian cumulative distribution 
